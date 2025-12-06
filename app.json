@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "Stock Management",
+    "slug": "stock-management-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "stockapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.stockapp.management",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Esta app necesita acceso a la cámara para tomar fotos de productos.",
+        "NSPhotoLibraryUsageDescription": "Esta app necesita acceso a tus fotos para seleccionar imágenes de productos.",
+        "NSLocationWhenInUseUsageDescription": "Esta app necesita tu ubicación para registrar la ubicación de los productos."
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyB59rh3HaiJmW59VxI3xQilNLmvjzYgD1U"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.stockapp.management",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB59rh3HaiJmW59VxI3xQilNLmvjzYgD1U"
+        }
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permitir acceso a la cámara para tomar fotos de productos."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Permitir acceso a tu ubicación para registrar ubicaciones de productos."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "La app accede a tus fotos para seleccionar imágenes de productos."
+        }
+      ]
+    ]
+  }
+}
