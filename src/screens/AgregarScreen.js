@@ -126,7 +126,6 @@ export default function AgregarScreen({ route, navigation }) {
         Alert.alert('Éxito', 'Producto agregado');
       }
 
-      // Reset form
       setName('');
       setCategory('');
       setQuantity('0');

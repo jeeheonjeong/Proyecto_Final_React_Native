@@ -1,33 +1,33 @@
-// Common color palette
+
 export const colors = {
-  // UI Colors
+
   primary: '#007AFF',
   success: '#00ff40ff',
   danger: '#FF3B30',
   warning: '#FF9500',
   
-  // Backgrounds
+
   background: '#f5f5f5',
   white: '#fff',
   
-  // Text Colors
+
   text: '#333',
   darkGray: '#666',
   gray: '#999',
   
-  // Borders & Dividers
+
   border: '#ddd',
   lightText: '#e0e0e0',
   lightGray: '#f0f0f0',
   
-  // Status Colors
+
   green: '#0fe419ff',
   cyan: '#00bef8ff',
   blue: '#0051ffff',
   lightBlue: '#E3F2FD',
 };
 
-// Common spacing
+
 export const spacing = {
   xs: 4,
   sm: 8,
@@ -37,7 +37,7 @@ export const spacing = {
   xxl: 24,
 };
 
-// Common border radius
+
 export const borderRadius = {
   small: 4,
   medium: 8,
@@ -46,7 +46,7 @@ export const borderRadius = {
   pill: 35,
 };
 
-// Navigation colors
+
 export const navigationColors = {
   tabActive: '#007AFF',
   tabInactive: 'gray',
@@ -54,7 +54,7 @@ export const navigationColors = {
   loadingIndicator: '#0099ffff',
 };
 
-// Shadow styles
+
 export const shadows = {
   card: {
     shadowColor: '#000',
@@ -72,7 +72,7 @@ export const shadows = {
   },
 };
 
-// Typography
+
 export const typography = {
   largeTitle: {
     fontSize: 28,
@@ -102,7 +102,7 @@ export const typography = {
   },
 };
 
-// Common layout patterns
+
 export const commonStyles = {
   container: {
     flex: 1,

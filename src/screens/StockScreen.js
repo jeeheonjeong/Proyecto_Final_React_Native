@@ -16,7 +16,6 @@ export default function StockScreen({ navigation }) {
   const categories = useSelector(selectCategories);
   const [refreshing, setRefreshing] = React.useState(false);
 
-  // Load products from local database
   const loadProducts = useCallback(async () => {
     if (!user) return;
 
