@@ -1,10 +1,11 @@
 import React, { useEffect, useCallback, useMemo } from 'react';
-import {  View,  Text,  FlatList,  StyleSheet,  TextInput,  TouchableOpacity,  ActivityIndicator,  RefreshControl,  ScrollView } from 'react-native';
+import {  View,  Text,  FlatList,  TextInput,  TouchableOpacity,  ActivityIndicator,  RefreshControl,  ScrollView } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductCard from '../components/ProductCard';
 import {  setProducts,  setSearchQuery,  setSelectedCategory,  selectFilteredProducts,  selectCategories,  removeProduct } from '../store/slices/productsSlice';
 import { getAllProducts, deleteProduct as deleteProductDB } from '../services/database';
 import { deleteProductEverywhere } from '../services/syncService';
+import { styles } from './styles/StockScreenStyles';
 
 export default function StockScreen({ navigation }) {
   const dispatch = useDispatch();
@@ -153,79 +154,3 @@ export default function StockScreen({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  titleContainer: {
-    backgroundColor: '#fff',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  subtitle: {
-    fontSize: 14,
-    color: '#666',
-    marginTop: 4,
-  },
-  header: {
-    backgroundColor: '#fff',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-  },
-  searchInput: {
-    backgroundColor: '#f0f0f0',
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 16,
-    marginBottom: 12,
-  },
-  categoriesContainer: {
-    flexDirection: 'row',
-  },
-  categoryButton: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
-    backgroundColor: '#f0f0f0',
-    marginRight: 8,
-  },
-  categoryButtonActive: {
-    backgroundColor: '#00bef8ff',
-  },
-  categoryButtonText: {
-    fontSize: 14,
-    color: '#666',
-    fontWeight: '600',
-  },
-  categoryButtonTextActive: {
-    color: '#fff',
-  },
-  separator: {
-    height: 0,
-  },
-  emptyContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 60,
-  },
-  emptyText: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#666',
-    marginBottom: 8,
-  },
-  emptySubtext: {
-    fontSize: 14,
-    color: '#999',
-    textAlign: 'center',
-  },
-});

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {  View,  Text,  TextInput,  TouchableOpacity,  StyleSheet,  ScrollView,  Image,  Alert,  ActivityIndicator,  KeyboardAvoidingView,  Platform } from 'react-native';
+import {  View,  Text,  TextInput,  TouchableOpacity,  ScrollView,  Image,  Alert,  ActivityIndicator,  KeyboardAvoidingView,  Platform } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import * as ImagePicker from 'expo-image-picker';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { addProduct, updateProductInState } from '../store/slices/productsSlice';
 import { insertProduct, updateProduct } from '../services/database';
+import { styles } from './styles/AgregarScreenStyles';
 
 export default function AgregarScreen({ route, navigation }) {
   const dispatch = useDispatch();
@@ -310,145 +311,3 @@ export default function AgregarScreen({ route, navigation }) {
     </KeyboardAvoidingView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  scrollView: {
-    flex: 1,
-  },
-  content: {
-    padding: 16,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 20,
-  },
-  photoSection: {
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  photo: {
-    width: 200,
-    height: 200,
-    borderRadius: 10,
-    backgroundColor: '#e0e0e0',
-  },
-  photoPlaceholder: {
-    width: 200,
-    height: 200,
-    borderRadius: 10,
-    backgroundColor: '#e0e0e0',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  photoPlaceholderText: {
-    color: '#999',
-    fontSize: 16,
-  },
-  photoButtons: {
-    flexDirection: 'row',
-    marginTop: 12,
-  },
-  photoButton: {
-    backgroundColor: '#008cffff',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 8,
-    marginHorizontal: 6,
-  },
-  photoButtonText: {
-    color: '#fff',
-    fontSize: 14,
-    fontWeight: '600',
-  },
-  label: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 8,
-    marginTop: 12,
-  },
-  input: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 16,
-    borderWidth: 1,
-    borderColor: '#ddd',
-  },
-  notesInput: {
-    height: 100,
-    textAlignVertical: 'top',
-  },
-  locationInfo: {
-    backgroundColor: '#E8F5E9',
-    padding: 12,
-    borderRadius: 8,
-    marginTop: 16,
-  },
-  locationText: {
-    fontSize: 14,
-    color: '#0fe419ff',
-  },
-  saveButton: {
-    backgroundColor: '#158b33ff',
-    padding: 16,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginTop: 24,
-    marginBottom: 40,
-  },
-  saveButtonDisabled: {
-    opacity: 0.6,
-  },
-  saveButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  cameraContainer: {
-    flex: 1,
-  },
-  camera: {
-    flex: 1,
-  },
-  cameraControls: {
-    position: 'absolute',
-    bottom: 40,
-    left: 0,
-    right: 0,
-    alignItems: 'center',
-  },
-  captureButton: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  captureButtonInner: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    backgroundColor: '#fff',
-    borderWidth: 4,
-    borderColor: '#0051ffff',
-  },
-  cancelButton: {
-    marginTop: 20,
-    padding: 12,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    borderRadius: 8,
-  },
-  cancelButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-});

@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react';
-import {  View,  Text,  StyleSheet,  TouchableOpacity,Alert,  ActivityIndicator, 
+import {  View,  Text,  TouchableOpacity,Alert,  ActivityIndicator, 
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from 'firebase/auth';
 import { auth } from '../services/firebase';
 import { logout } from '../store/slices/authSlice';
 import { setProducts } from '../store/slices/productsSlice';
-import {
-  setSyncing,
-  setSyncSuccess,
-  setSyncError,
-  setPendingChanges,
-} from '../store/slices/syncSlice';
+import {  setSyncing,  setSyncSuccess,  setSyncError,  setPendingChanges } from '../store/slices/syncSlice';
 import { fullSync } from '../services/syncService';
 import { getProductsNeedingSync, getAllProducts } from '../services/database';
+import { styles } from './styles/PerfilScreenStyles';
 
 export default function PerfilScreen() {
   const dispatch = useDispatch();
@@ -183,171 +179,3 @@ export default function PerfilScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  header: {
-    backgroundColor: '#fff',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  section: {
-    marginTop: 16,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#333',
-    marginLeft: 16,
-    marginBottom: 12,
-  },
-  infoCard: {
-    backgroundColor: '#fff',
-    marginHorizontal: 16,
-    padding: 16,
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  infoRow: {
-    marginBottom: 12,
-  },
-  infoLabel: {
-    fontSize: 14,
-    color: '#666',
-    marginBottom: 4,
-  },
-  infoValue: {
-    fontSize: 16,
-    color: '#333',
-    fontWeight: '600',
-  },
-  syncCard: {
-    backgroundColor: '#fff',
-    marginHorizontal: 16,
-    padding: 16,
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  syncStatusRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  syncStatusIndicator: {
-    width: 12,
-    height: 12,
-    borderRadius: 6,
-    marginRight: 8,
-  },
-  syncStatusText: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
-  },
-  syncInfoRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 8,
-  },
-  syncInfoLabel: {
-    fontSize: 14,
-    color: '#666',
-  },
-  syncInfoValue: {
-    fontSize: 14,
-    color: '#333',
-    fontWeight: '600',
-  },
-  syncInfoValueWarning: {
-    color: '#FF9500',
-  },
-  errorContainer: {
-    backgroundColor: '#FFEBEE',
-    padding: 12,
-    borderRadius: 8,
-    marginTop: 8,
-  },
-  errorText: {
-    fontSize: 12,
-    color: '#C62828',
-  },
-  syncButton: {
-    backgroundColor: '#007AFF',
-    padding: 14,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginTop: 16,
-  },
-  syncButtonDisabled: {
-    opacity: 0.6,
-  },
-  syncButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  statsCard: {
-    backgroundColor: '#fff',
-    marginHorizontal: 16,
-    padding: 16,
-    borderRadius: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  statItem: {
-    alignItems: 'center',
-  },
-  statValue: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#007AFF',
-    marginBottom: 4,
-  },
-  statLabel: {
-    fontSize: 12,
-    color: '#666',
-    textAlign: 'center',
-  },
-  logoutButton: {
-    backgroundColor: '#FF3B30',
-    marginHorizontal: 16,
-    padding: 16,
-    borderRadius: 10,
-    alignItems: 'center',
-  },
-  logoutButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  footer: {
-    padding: 24,
-    alignItems: 'center',
-  },
-  footerText: {
-    fontSize: 12,
-    color: '#999',
-  },
-});

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import {  View,  Text,  StyleSheet,  TouchableOpacity,  ActivityIndicator,  Alert } from 'react-native';
+import {  View,  Text,  TouchableOpacity,  ActivityIndicator,  Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import * as Location from 'expo-location';
 import {  setCurrentLocation,  setLocationPermission,  setLoading,  setError } from '../store/slices/locationSlice';
+import { styles } from './styles/UbicacionScreenStyles';
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyB59rh3HaiJmW59VxI3xQilNLmvjzYgD1U';
 
@@ -75,8 +76,8 @@ export default function UbicacionScreen() {
         longitudeDelta: 0.01,
       }
     : {
-        latitude: 19.432608,
-        longitude: -99.133209,
+        latitude: -34.6037,
+        longitude: -58.3816,
         latitudeDelta: 0.1,
         longitudeDelta: 0.1,
       };
@@ -168,81 +169,3 @@ export default function UbicacionScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  refreshButton: {
-    backgroundColor: '#E3F2FD',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 8,
-    minWidth: 100,
-    alignItems: 'center',
-  },
-  refreshButtonText: {
-    color: '#007AFF',
-    fontSize: 14,
-    fontWeight: '600',
-  },
-  locationInfo: {
-    backgroundColor: '#fff',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-  },
-  locationLabel: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#666',
-    marginBottom: 4,
-  },
-  locationText: {
-    fontSize: 14,
-    color: '#333',
-    marginBottom: 2,
-  },
-  mapContainer: {
-    flex: 1,
-  },
-  map: {
-    flex: 1,
-  },
-  infoBox: {
-    backgroundColor: '#fff',
-    padding: 16,
-    borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
-  },
-  infoTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 6,
-  },
-  infoText: {
-    fontSize: 14,
-    color: '#666',
-    marginBottom: 4,
-  },
-  infoSubtext: {
-    fontSize: 12,
-    color: '#999',
-  },
-});

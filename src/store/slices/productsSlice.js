@@ -47,17 +47,7 @@ const productsSlice = createSlice({
   },
 });
 
-export const {
-  setProducts,
-  addProduct,
-  updateProductInState,
-  removeProduct,
-  setLoading,
-  setError,
-  clearError,
-  setSearchQuery,
-  setSelectedCategory,
-} = productsSlice.actions;
+export const {  setProducts,  addProduct,  updateProductInState,  removeProduct,  setLoading, setError,  clearError,  setSearchQuery,  setSelectedCategory } = productsSlice.actions;
 
 
 export const selectFilteredProducts = (state) => {

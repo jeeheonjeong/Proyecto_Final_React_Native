@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
+import { styles } from './ProductCardStyles';
 
 const ProductCard = memo(({ product, onPress, onDelete }) => {
   const handleDelete = () => {
@@ -82,106 +83,5 @@ const ProductCard = memo(({ product, onPress, onDelete }) => {
 });
 
 ProductCard.displayName = 'ProductCard';
-
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    marginHorizontal: 16,
-    marginVertical: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-    overflow: 'hidden',
-  },
-  cardContent: {
-    flexDirection: 'row',
-    padding: 12,
-  },
-  productImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 8,
-    backgroundColor: '#f0f0f0',
-  },
-  placeholderImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 8,
-    backgroundColor: '#e0e0e0',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  placeholderText: {
-    color: '#999',
-    fontSize: 12,
-  },
-  infoContainer: {
-    flex: 1,
-    marginLeft: 12,
-  },
-  productName: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 6,
-  },
-  categoryBadge: {
-    backgroundColor: '#00a2ffe8',
-    borderRadius: 4,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    alignSelf: 'flex-start',
-    marginBottom: 8,
-  },
-  categoryText: {
-    color: '#fff',
-    fontSize: 12,
-    fontWeight: '600',
-  },
-  detailsRow: {
-    flexDirection: 'row',
-    marginBottom: 4,
-  },
-  detailLabel: {
-    fontSize: 14,
-    color: '#666',
-    marginRight: 6,
-  },
-  detailValue: {
-    fontSize: 14,
-    color: '#333',
-    fontWeight: '600',
-  },
-  detailValueSmall: {
-    fontSize: 12,
-    color: '#333',
-    fontWeight: '600',
-  },
-  syncBadge: {
-    borderRadius: 4,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    alignSelf: 'flex-start',
-    marginTop: 6,
-  },
-  syncText: {
-    color: '#fff',
-    fontSize: 11,
-    fontWeight: '600',
-  },
-  deleteButton: {
-    backgroundColor: '#ff0000ff',
-    padding: 12,
-    alignItems: 'center',
-  },
-  deleteButtonText: {
-    color: '#fff',
-    fontSize: 14,
-    fontWeight: '600',
-  },
-});
 
 export default ProductCard;

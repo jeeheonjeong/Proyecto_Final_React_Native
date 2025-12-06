@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import { navigationColors } from '../styles/theme';
 import StockScreen from '../screens/StockScreen';
 import AgregarScreen from '../screens/AgregarScreen';
 import UbicacionScreen from '../screens/UbicacionScreen';
@@ -28,8 +29,8 @@ export default function MainTabNavigator() {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: '#007AFF',
-        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: navigationColors.tabActive,
+        tabBarInactiveTintColor: navigationColors.tabInactive,
         tabBarStyle: {
           paddingBottom: 5,
           paddingTop: 5,
