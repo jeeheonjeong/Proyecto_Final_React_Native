@@ -5,8 +5,7 @@ import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import * as Location from 'expo-location';
 import {  setCurrentLocation,  setLocationPermission,  setLoading,  setError } from '../store/slices/locationSlice';
 import { styles } from './styles/UbicacionScreenStyles';
-
-const GOOGLE_MAPS_API_KEY = 'AIzaSyB59rh3HaiJmW59VxI3xQilNLmvjzYgD1U';
+import { GOOGLE_MAPS_API_KEY } from '@env';
 
 export default function UbicacionScreen() {
   const dispatch = useDispatch();
